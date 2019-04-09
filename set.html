@@ -3,8 +3,19 @@
 <head></head>
 <body>
 <script>
+function inIframe () {
+    try {
+        return window.self !== window.top;
+    } catch (e) {
+        return true;
+    }
+}
+if (inIframe()) {
     document.cookie="thirdparty=yes";
     document.location="check.html";
+} else {
+    document.write("Please do not access this page directly");
+}
 </script>
 </body>
 </html>
