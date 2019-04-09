@@ -6,8 +6,10 @@
  if (window.parent) {
     if (/thirdparty=yes/.test(document.cookie)) {
         window.parent.postMessage('MM:3PCsupported', '*');
+        document.write("found");
     } else {
         window.parent.postMessage('MM:3PCunsupported', '*');
+        document.write("notfound");
     }
  }
 </script>
